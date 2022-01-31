@@ -1,10 +1,7 @@
 package com.engineer.inzynier;
 
-import com.engineer.inzynier.dto.User;
-import com.engineer.inzynier.persistence.UserRepository;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
+import com.engineer.inzynier.entities.User;
+import com.engineer.inzynier.repositories.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -12,6 +9,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -28,8 +27,6 @@ public class UserRepositoryTests {
         User user = new User();
         user.setEmail("someemail@email.com");
         user.setPassword("password");
-        user.setFirstName("User");
-        user.setLastName("Userro");
 
         User savedUser = repository.save(user);
 

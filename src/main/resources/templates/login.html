@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login page</title>
+    <div th:replace="fragments/header :: header-css"></div>
+    <link rel="stylesheet" th:href="@{/css/signin.css}">
+</head>
+<!--<body class="text-center">-->
+<!--<div th:replace="fragments/header :: header"></div>-->
+<!--<div th:if="${param.error}">-->
+<!--    Invalid username and password.-->
+<!--</div>-->
+<!--<div th:if="${param.logout}">-->
+<!--    You have been logged out.-->
+<!--</div>-->
+<!--<form th:action="@{/login}" method="post">-->
+<!--    <div><label> User Name : <input type="text" name="username"/> </label></div>-->
+<!--    <div><label> Password: <input type="password" name="password"/> </label></div>-->
+<!--    <div><input type="submit" value="Sign In"/></div>-->
+<!--</form>-->
+<!--</body>-->
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<form class="form-signin" method="post" th:action="@{/login}">
+    <div class="alert alert-danger" th:if="${userExistsException}">
+        <span th:text="${userExistsException}"></span>
+    </div>
+
+    <label for="username">Username:</label>
+    <input autofocus class="form-control" id="username" name="username" required type="text">
+
+    <label for="password">Password:</label>
+    <input class="form-control" id="password" name="password" required type="password">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+</form>
+</body>
+
+
+</html>

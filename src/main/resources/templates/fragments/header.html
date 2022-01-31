@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:fragment="header-css">
+        <!-- this is header-css -->
+        <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </div>
+</head>
+<body>
+<div th:fragment="header">
+    <ul>
+        <li><a class="home" th:href="@{/index}">Home</a></li>
+        <li th:if="${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/register}">Register</a></li>
+        <li th:if="${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/login}">Login</a></li>
+        <li style="float: right" th:if="!${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/logout}">Logout</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

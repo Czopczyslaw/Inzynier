@@ -1,7 +1,6 @@
-package com.engineer.inzynier.security;
+package com.engineer.inzynier.configuration;
 
-import com.engineer.inzynier.services.CustomUserDetailsService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.engineer.inzynier.services.UserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -9,22 +8,15 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
-
-import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private DataSource dataSource;
 
     @Bean
-    public UserDetailsService userDetailsService() {
-        return new CustomUserDetailsService();
+    public org.springframework.security.core.userdetails.UserDetailsService userDetailsService() {
+        return new UserDetailsService();
     }
 
     @Bean
@@ -42,31 +34,38 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder managerBuilder) throws Exception {
-        managerBuilder.authenticationProvider(authenticationProvider());
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        if (managerBuilder != null) {
+            managerBuilder.authenticationProvider(authenticationProvider);
+        }
+        super.configure(managerBuilder);
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
-                .antMatchers("/users").authenticated()
-                .anyRequest().permitAll()
+                .antMatchers("/", "/index").permitAll()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/registerForm").permitAll()
+                .antMatchers("/testData").permitAll()
+                .antMatchers("/header").permitAll()
+                .antMatchers("/logout").permitAll()
+                .antMatchers("/api/loginUser").permitAll()
+                .antMatchers("/api/registerUser").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                    .usernameParameter("email")
-                    .defaultSuccessUrl("/users")
-                    .permitAll()
+                .loginPage("/login.html").permitAll()
+                .loginProcessingUrl("/login").permitAll()
+                .defaultSuccessUrl("/index", true)
                 .and()
                 .logout()
-                    .logoutSuccessUrl("/").permitAll()
-                .and().rememberMe().tokenRepository(persistentTokenRepository());
-
-    }
-
-
-    @Bean
-    public PersistentTokenRepository persistentTokenRepository() {
-        JdbcTokenRepositoryImpl tokenRepo = new JdbcTokenRepositoryImpl();
-        tokenRepo.setDataSource(dataSource);
-        return tokenRepo;
+                .logoutSuccessUrl("/index")
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .permitAll();
     }
 }
