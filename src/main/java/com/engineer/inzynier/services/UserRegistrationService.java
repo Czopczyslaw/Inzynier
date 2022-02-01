@@ -16,25 +16,29 @@ import java.util.UUID;
 public class UserRegistrationService {
 
     @Autowired
-    private UserDAO userDao;
+    private UserDAO userDAO;
 
-    public void registerUser(UserRegistrationDTO userRegistrationDTO) {
-        if (doUserExists(userRegistrationDTO)) {
-            throw new UserExistsException("User with username: ${userRegistrationDTO.username} exists.");
+    public void registerUser(UserRegistrationDTO dto) throws UserExistsException {
+        if (doUserExists(dto)) {
+            throw new UserExistsException("User with username: " + dto.getUsername() + " exists!");
         }
+
         User user = new User();
-        user.setUsername(userRegistrationDTO.getUsername());
-        user.setEmail(userRegistrationDTO.getEmail());
-        user.setPassword(userRegistrationDTO.getPassword());
+        user.setUsername(dto.getUsername());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
         user.setUserRole(Role.USER);
         user.setUid(UUID.randomUUID().toString());
         user.setCreated(Date.from(Instant.now()));
 
-        userDao.addUser(user);
+        userDAO.addUser(user);
     }
 
-    private boolean doUserExists(UserRegistrationDTO userRegistrationDTO) {
-        return userDao.getUserList().stream().map(User::getUsername).anyMatch(login -> login.equals(userRegistrationDTO.getUsername()));
+    private Boolean doUserExists(UserRegistrationDTO dto) {
+        return userDAO.getUserList()
+                .stream()
+                .map(User::getUsername)
+                .anyMatch(username -> username.equals(dto.getUsername()));
     }
 
 }

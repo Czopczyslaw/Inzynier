@@ -15,16 +15,19 @@ public class RestUserLoginService {
     @Autowired
     private UserDAO userDAO;
 
-    public RestUserLoginOutput loginUser(UserLoginDTO userLoginDTO) {
-        User user = null;
+    public RestUserLoginOutput loginUser(UserLoginDTO dto) throws WrongUserPasswordException {
+        User user;
+
         try {
-            user = userDAO.getUserByUsername(userLoginDTO.getUsername());
+            user = userDAO.getUserByUsername(dto.getUsername());
         } catch (Exception ex) {
-            throw new UserDoesNotExistsException("User ${userLoginDTO.username} does not exists");
+            throw new UserDoesNotExistsException("User " + dto.getUsername() + " does not exists");
         }
-        if (!new BCryptPasswordEncoder().matches(userLoginDTO.getPassword(), user.getPassword())) {
-            throw new WrongUserPasswordException("Wrong password for user ${userLoginDTO.username}");
+
+        if (!new BCryptPasswordEncoder().matches(dto.getPassword(), user.getPassword())) {
+            throw new WrongUserPasswordException("Wrong password for user " + dto.getUsername());
         }
+
         return new RestUserLoginOutput(user.getUsername(), user.getUid());
     }
 }

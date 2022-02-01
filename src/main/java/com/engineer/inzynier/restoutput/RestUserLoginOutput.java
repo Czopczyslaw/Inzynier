@@ -1,25 +1,27 @@
 package com.engineer.inzynier.restoutput;
 
-import com.sun.istack.NotNull;
-
 public class RestUserLoginOutput {
-    @NotNull
-    private final String username;
-    @NotNull
-    private final String uid;
+    private String username;
+    private String uid;
 
-    public RestUserLoginOutput(@NotNull String username, @NotNull String uid) {
+    public RestUserLoginOutput(String username, String uid) {
         this.username = username;
         this.uid = uid;
     }
 
-    @NotNull
-    public final String getUsername() {
-        return this.username;
+    public String getUsername() {
+        return username;
     }
 
-    @NotNull
-    public final String getUid() {
-        return this.uid;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

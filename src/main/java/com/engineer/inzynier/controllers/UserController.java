@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
 @Controller
 public class UserController {
-
+    @Autowired
     private UserRegistrationService userRegistrationService;
+
     @Autowired
     private UserValidationService userValidationService;
 
@@ -28,21 +28,22 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerEffect(@ModelAttribute UserRegistrationDTO userRegistrationDTO, Map<String, Object> model) {
-        HashMap<String, String> validationErrors = new UserValidationService().validateUserData(userRegistrationDTO);
-        model.put("form", userRegistrationDTO);
+    public String registerEffect(@ModelAttribute UserRegistrationDTO dto, Map<String, Object> model) {
+        Map<String, String> validationErrors = userValidationService.validateUserData(dto);
+
+        model.put("form", dto);
+
         if (!validationErrors.isEmpty()) {
             model.putAll(validationErrors);
             return "registerForm";
         } else {
             try {
-                userRegistrationService.registerUser(userRegistrationDTO);
+                userRegistrationService.registerUser(dto);
             } catch (UserExistsException ex) {
                 model.put("userExistsException", "User with this username exists!");
                 return "registerForm";
             }
             return "index";
-
         }
     }
 }

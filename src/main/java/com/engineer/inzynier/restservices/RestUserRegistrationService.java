@@ -18,14 +18,15 @@ public class RestUserRegistrationService {
     @Autowired
     private UserDAO userDAO;
 
-    public RestUserLoginOutput registerUser(UserRegistrationDTO userRegistrationDTO) {
-        if (doUserExists(userRegistrationDTO)) {
-            throw new UserExistsException("User with username: ${userRegistrationDTO.username} exists.");
+    public RestUserLoginOutput registerUser(UserRegistrationDTO dto) throws UserExistsException {
+        if (doUserExists(dto)) {
+            throw new UserExistsException("User with username: " + dto.getUsername() + " exists!");
         }
+
         User user = new User();
-        user.setUsername(userRegistrationDTO.getUsername());
-        user.setEmail(userRegistrationDTO.getEmail());
-        user.setPassword(userRegistrationDTO.getPassword());
+        user.setUsername(dto.getUsername());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
         user.setUserRole(Role.USER);
         user.setUid(UUID.randomUUID().toString());
         user.setCreated(Date.from(Instant.now()));
@@ -35,7 +36,10 @@ public class RestUserRegistrationService {
         return new RestUserLoginOutput(user.getUsername(), user.getUid());
     }
 
-    boolean doUserExists(UserRegistrationDTO userRegistrationDTO) {
-        return userDAO.getUserList().stream().map(User::getUsername).anyMatch(login -> login.equals(userRegistrationDTO.getUsername()));
+    private Boolean doUserExists(UserRegistrationDTO dto) {
+        return userDAO.getUserList()
+                .stream()
+                .map(User::getUsername)
+                .anyMatch(username -> username.equals(dto.getUsername()));
     }
 }

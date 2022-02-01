@@ -1,37 +1,31 @@
 package com.engineer.inzynier.dto;
 
-import com.sun.istack.NotNull;
-
 public class UserRegistrationDTO {
-    @NotNull
-    private final String username;
-    @NotNull
-    private final String password;
-    @NotNull
-    private final String email;
+    private String username;
+    private String password;
+    private String email;
 
-    public UserRegistrationDTO(@NotNull String username, @NotNull String password, @NotNull String email) {
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public UserRegistrationDTO() {
-        this(null, null, null);
-    }
-
-    @NotNull
-    public final String getUsername() {
-        return this.username;
-    }
-
-    @NotNull
-    public final String getPassword() {
-        return this.password;
-    }
-
-    @NotNull
-    public final String getEmail() {
-        return this.email;
     }
 }

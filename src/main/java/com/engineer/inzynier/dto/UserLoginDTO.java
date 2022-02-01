@@ -1,25 +1,22 @@
 package com.engineer.inzynier.dto;
 
-import com.sun.istack.NotNull;
-
 public class UserLoginDTO {
-    @NotNull
-    private final String username;
-    @NotNull
-    private final String password;
+    private String username;
+    private String password;
 
-    public UserLoginDTO(@NotNull String username, @NotNull String password) {
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
-    }
-
-    @NotNull
-    public final String getUsername() {
-        return this.username;
-    }
-
-    @NotNull
-    public final String getPassword() {
-        return this.password;
     }
 }

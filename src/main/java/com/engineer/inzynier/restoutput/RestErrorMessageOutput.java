@@ -1,17 +1,17 @@
 package com.engineer.inzynier.restoutput;
 
-import com.sun.istack.NotNull;
-
 public class RestErrorMessageOutput extends Throwable {
-    @NotNull
-    private final String errorMessage;
+    private String errorMessage;
 
-    public RestErrorMessageOutput(@NotNull String errorMessage) {
+    public RestErrorMessageOutput(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 
-    @NotNull
-    public final String getErrorMessage() {
-        return this.errorMessage;
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 }
