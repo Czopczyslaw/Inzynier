@@ -19,7 +19,7 @@ public class UserPrincipal implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         HashSet<GrantedAuthority> setAuths = new HashSet<>();
         setAuths.add(new SimpleGrantedAuthority(user.getUserRole().toString()));
-        return new ArrayList<GrantedAuthority>(setAuths);
+        return new ArrayList<>(setAuths);
     }
 
     @Override

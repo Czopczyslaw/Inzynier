@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 
 @Service
@@ -40,6 +41,7 @@ public class RestUserRegistrationService {
         return userDAO.getUserList()
                 .stream()
                 .map(User::getUsername)
+                .filter(Objects::nonNull)
                 .anyMatch(username -> username.equals(dto.getUsername()));
     }
 }

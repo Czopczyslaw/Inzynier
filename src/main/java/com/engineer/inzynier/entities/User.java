@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.UUID;
 
 
-@Entity(name = "users")
+@Entity(name = "app_users")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
 
