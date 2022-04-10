@@ -1,27 +1,4 @@
-"2022-02-02 00:28:03 [main] INFO  c.e.inzynier.InzynierApplication - Starting InzynierApplication using Java 1.8.0_281 on Czopczyslaw with PID 8096 (C:\Users\karol\Desktop\Inzynier\build\classes\java\main started by karol in C:\Users\karol\Desktop\Inzynier)
-""2022-02-02 00:28:03 [main] INFO  c.e.inzynier.InzynierApplication - No active profile set, falling back to default profiles: default
-""2022-02-02 00:28:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-""2022-02-02 00:28:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
-""2022-02-02 00:28:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-""2022-02-02 00:28:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-""2022-02-02 00:28:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
-""2022-02-02 00:28:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-""2022-02-02 00:28:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1835 ms
-""2022-02-02 00:28:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-""2022-02-02 00:28:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
-""2022-02-02 00:28:05 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-""2022-02-02 00:28:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-""2022-02-02 00:28:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-""2022-02-02 00:28:07 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-""2022-02-02 00:28:09 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-""2022-02-02 00:28:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-""2022-02-02 00:28:09 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-""2022-02-02 00:28:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with []
-""2022-02-02 00:28:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5822ecda, org.springframework.security.web.context.SecurityContextPersistenceFilter@6481dce5, org.springframework.security.web.header.HeaderWriterFilter@46d1b59, org.springframework.security.web.csrf.CsrfFilter@749baa0c, org.springframework.security.web.authentication.logout.LogoutFilter@2ab9e43e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4300e240, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14874a5d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23afc725, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5908e6d6, org.springframework.security.web.session.SessionManagementFilter@26d40c77, org.springframework.security.web.access.ExceptionTranslationFilter@3dc82e6a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46b5f061]
-""2022-02-02 00:28:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-""2022-02-02 00:28:10 [main] INFO  c.e.inzynier.InzynierApplication - Started InzynierApplication in 8.002 seconds (JVM running for 9.355)
-""2022-02-02 00:28:21 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-""2022-02-02 00:29:37 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-""2022-02-02 00:29:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-""2022-02-02 00:29:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+"2022-04-07 00:10:01 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-07 00:10:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-04-07 00:10:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 "

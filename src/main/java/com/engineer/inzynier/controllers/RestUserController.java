@@ -71,11 +71,11 @@ public class RestUserController {
         Map<String, String> validationErrors = userValidationService.validateUserData(dto);
 
         if (!validationErrors.isEmpty()) {
-            String errorMessage = "";
+            StringBuilder errorMessage = new StringBuilder();
             for (String key : validationErrors.keySet()) {
-                errorMessage += validationErrors.get(key);
+                errorMessage.append(validationErrors.get(key));
             }
-            return new RestErrorMessageOutput(errorMessage);
+            return new RestErrorMessageOutput(errorMessage.toString());
         } else {
             try {
                 return restUserRegistrationService.registerUser(dto);
