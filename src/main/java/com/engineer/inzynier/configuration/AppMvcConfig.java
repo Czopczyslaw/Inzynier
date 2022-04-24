@@ -20,6 +20,7 @@ public class AppMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/register").setViewName("register");
         registry.addViewController("/registerForm").setViewName("registerForm");
         registry.addViewController("/header").setViewName("header");
+        registry.addViewController("/error").setViewName("error");
     }
 
     @Override

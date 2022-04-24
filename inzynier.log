@@ -1,4 +1,179 @@
-"2022-04-07 00:10:01 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-""2022-04-07 00:10:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-""2022-04-07 00:10:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+"2022-04-24 18:59:45 [main] INFO  c.e.inzynier.InzynierApplication - Starting InzynierApplication using Java 1.8.0_281 on Czopczyslaw with PID 10688 (C:\Users\karol\Desktop\Inzynier\build\classes\java\main started by karol in C:\Users\karol\Desktop\Inzynier)
+""2022-04-24 18:59:45 [main] INFO  c.e.inzynier.InzynierApplication - No active profile set, falling back to default profiles: default
+""2022-04-24 18:59:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-04-24 18:59:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
+""2022-04-24 18:59:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-04-24 18:59:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-04-24 18:59:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-04-24 18:59:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-04-24 18:59:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2038 ms
+""2022-04-24 18:59:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-04-24 18:59:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-04-24 18:59:47 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-04-24 18:59:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-04-24 18:59:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-04-24 18:59:50 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-04-24 18:59:51 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-04-24 18:59:51 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 18:59:51 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-04-24 18:59:52 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with []
+""2022-04-24 18:59:52 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cec590c, org.springframework.security.web.context.SecurityContextPersistenceFilter@d16209e, org.springframework.security.web.header.HeaderWriterFilter@2ef041bb, org.springframework.security.web.csrf.CsrfFilter@5908e6d6, org.springframework.security.web.authentication.logout.LogoutFilter@6ef1c3f7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b7774d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76596288, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40016ce1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1570cad0, org.springframework.security.web.session.SessionManagementFilter@605c7a9e, org.springframework.security.web.access.ExceptionTranslationFilter@54be6213, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fb07347]
+""2022-04-24 18:59:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-04-24 18:59:53 [main] INFO  c.e.inzynier.InzynierApplication - Started InzynierApplication in 8.615 seconds (JVM running for 9.998)
+""2022-04-24 19:01:26 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-04-24 19:01:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-04-24 19:01:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+""2022-04-24 19:01:28 [http-nio-8080-exec-6] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /login.html
+""2022-04-24 19:45:44 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public void com.engineer.inzynier.controllers.StepDataController.registerSteps(com.engineer.inzynier.dto.StepsDataDTO)]
+""2022-04-24 19:46:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 19:46:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-04-24 19:46:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-04-24 19:46:19 [main] INFO  c.e.inzynier.InzynierApplication - Starting InzynierApplication using Java 1.8.0_281 on Czopczyslaw with PID 22616 (C:\Users\karol\Desktop\Inzynier\build\classes\java\main started by karol in C:\Users\karol\Desktop\Inzynier)
+""2022-04-24 19:46:19 [main] INFO  c.e.inzynier.InzynierApplication - No active profile set, falling back to default profiles: default
+""2022-04-24 19:46:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-04-24 19:46:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 3 JPA repository interfaces.
+""2022-04-24 19:46:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-04-24 19:46:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-04-24 19:46:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-04-24 19:46:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-04-24 19:46:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2134 ms
+""2022-04-24 19:46:21 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-04-24 19:46:21 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-04-24 19:46:22 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-04-24 19:46:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-04-24 19:46:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-04-24 19:46:24 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-04-24 19:46:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-04-24 19:46:25 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 19:46:25 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-04-24 19:46:27 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with []
+""2022-04-24 19:46:27 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2079fcfc, org.springframework.security.web.context.SecurityContextPersistenceFilter@75784062, org.springframework.security.web.header.HeaderWriterFilter@67689c81, org.springframework.security.web.csrf.CsrfFilter@28654aff, org.springframework.security.web.authentication.logout.LogoutFilter@55a66bbf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6556471b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73e25780, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66048c9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77401977, org.springframework.security.web.session.SessionManagementFilter@2ec156fb, org.springframework.security.web.access.ExceptionTranslationFilter@6e6f5842, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d0f7bcf]
+""2022-04-24 19:46:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-04-24 19:46:28 [main] INFO  c.e.inzynier.InzynierApplication - Started InzynierApplication in 9.653 seconds (JVM running for 11.339)
+""2022-04-24 19:46:30 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-04-24 19:46:30 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-04-24 19:46:30 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+""2022-04-24 19:46:30 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public void com.engineer.inzynier.controllers.StepDataController.registerSteps(com.engineer.inzynier.dto.StepsDataDTO)]
+""2022-04-24 19:49:25 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------392791608278053972687201;charset=UTF-8' not supported]
+""2022-04-24 19:52:17 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------255327226138400218883990;charset=UTF-8' not supported]
+""2022-04-24 19:52:38 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value<EOL> at [Source: (PushbackInputStream); line: 1, column: 3]]
+""2022-04-24 19:53:48 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value<EOL> at [Source: (PushbackInputStream); line: 1, column: 3]]
+""2022-04-24 19:55:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s570ms864µs600ns).
+""2022-04-24 19:55:13 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: null] with root cause
+"java.lang.NumberFormatException: null
+	at java.lang.Long.parseLong(Long.java:552)
+	at java.lang.Long.parseLong(Long.java:631)
+	at com.engineer.inzynier.restservices.StepsRegistrationSerivce.registerSteps(StepsRegistrationSerivce.java:25)
+	at com.engineer.inzynier.controllers.StepDataController.registerSteps(StepDataController.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:204)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2022-04-24 19:55:15 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value<EOL> at [Source: (PushbackInputStream); line: 1, column: 3]]
+""2022-04-24 19:55:43 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 19:55:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-04-24 19:55:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-04-24 19:55:49 [main] INFO  c.e.inzynier.InzynierApplication - Starting InzynierApplication using Java 1.8.0_281 on Czopczyslaw with PID 5580 (C:\Users\karol\Desktop\Inzynier\build\classes\java\main started by karol in C:\Users\karol\Desktop\Inzynier)
+""2022-04-24 19:55:49 [main] INFO  c.e.inzynier.InzynierApplication - No active profile set, falling back to default profiles: default
+""2022-04-24 19:55:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-04-24 19:55:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
+""2022-04-24 19:55:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-04-24 19:55:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-04-24 19:55:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-04-24 19:55:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-04-24 19:55:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2070 ms
+""2022-04-24 19:55:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-04-24 19:55:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-04-24 19:55:52 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-04-24 19:55:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-04-24 19:55:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-04-24 19:55:55 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-04-24 19:55:56 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-04-24 19:55:56 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 19:55:56 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-04-24 19:55:57 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with []
+""2022-04-24 19:55:57 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e343265, org.springframework.security.web.context.SecurityContextPersistenceFilter@2560a7be, org.springframework.security.web.header.HeaderWriterFilter@259aec72, org.springframework.security.web.csrf.CsrfFilter@4c114687, org.springframework.security.web.authentication.logout.LogoutFilter@783f5f71, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@36b761e3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59aa2fba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f1574c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4301fa39, org.springframework.security.web.session.SessionManagementFilter@26be0d23, org.springframework.security.web.access.ExceptionTranslationFilter@79fc4e99, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e1ad658]
+""2022-04-24 19:55:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-04-24 19:55:58 [main] INFO  c.e.inzynier.InzynierApplication - Started InzynierApplication in 8.95 seconds (JVM running for 10.387)
+""2022-04-24 19:56:05 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-04-24 19:56:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-04-24 19:56:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-04-24 19:56:05 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value<EOL> at [Source: (PushbackInputStream); line: 1, column: 3]]
+""2022-04-24 19:58:14 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s676ms634µs).
+""2022-04-24 19:59:20 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 19:59:20 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-04-24 19:59:20 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-04-24 19:59:33 [main] INFO  c.e.inzynier.InzynierApplication - Starting InzynierApplication using Java 1.8.0_281 on Czopczyslaw with PID 3096 (C:\Users\karol\Desktop\Inzynier\build\classes\java\main started by karol in C:\Users\karol\Desktop\Inzynier)
+""2022-04-24 19:59:33 [main] INFO  c.e.inzynier.InzynierApplication - No active profile set, falling back to default profiles: default
+""2022-04-24 19:59:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-04-24 19:59:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+""2022-04-24 19:59:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-04-24 19:59:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-04-24 19:59:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-04-24 19:59:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-04-24 19:59:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2020 ms
+""2022-04-24 19:59:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-04-24 19:59:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-04-24 19:59:36 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-04-24 19:59:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-04-24 19:59:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-04-24 19:59:38 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-04-24 19:59:40 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-04-24 19:59:40 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-04-24 19:59:40 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-04-24 19:59:41 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with []
+""2022-04-24 19:59:41 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a86be01, org.springframework.security.web.context.SecurityContextPersistenceFilter@5fd31df7, org.springframework.security.web.header.HeaderWriterFilter@656302c, org.springframework.security.web.csrf.CsrfFilter@6d87253e, org.springframework.security.web.authentication.logout.LogoutFilter@364c93e6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ef914f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c8f65da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b9b5da5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3cae4518, org.springframework.security.web.session.SessionManagementFilter@49809275, org.springframework.security.web.access.ExceptionTranslationFilter@6963b0bd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6167c42f]
+""2022-04-24 19:59:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-04-24 19:59:41 [main] INFO  c.e.inzynier.InzynierApplication - Started InzynierApplication in 8.605 seconds (JVM running for 9.981)
+""2022-04-24 20:00:27 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-04-24 20:00:27 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-04-24 20:00:27 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-04-24 20:03:51 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m10s730ms607µs400ns).
 "

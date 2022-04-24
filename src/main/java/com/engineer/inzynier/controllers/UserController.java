@@ -9,6 +9,8 @@ import com.engineer.inzynier.restoutput.RestErrorMessageOutput;
 import com.engineer.inzynier.services.UserLoginService;
 import com.engineer.inzynier.services.UserRegistrationService;
 import com.engineer.inzynier.services.UserValidationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,8 @@ import java.util.Map;
 
 @Controller
 public class UserController {
+    Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private UserRegistrationService userRegistrationService;
 
@@ -43,13 +47,14 @@ public class UserController {
             try {
                 userRegistrationService.registerUser(dto);
             } catch (UserExistsException ex) {
+                logger.error(ex.getMessage());
                 model.put("userExistsException", "User with this username exists!");
                 return "registerForm";
             }
             return "index";
         }
     }
-
+/*
     @PostMapping("/login")
     public String loginEffect(@ModelAttribute UserLoginDTO dto, Map<String,Object> model){
 
@@ -65,7 +70,7 @@ public class UserController {
             }
             return "login";
         }
-    }
+    }*/
     /*
     @PostMapping("/api/loginUser")
     public Object loginUser(@RequestBody UserLoginDTO dto, @RequestHeader String appKey) {

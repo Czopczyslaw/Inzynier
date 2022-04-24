@@ -29,6 +29,7 @@
 
     <label for="username">Username:</label>
     <input autofocus class="form-control" id="username" name="username" required type="text">
+    <p class="error" th:if="${param.error}">Użytkownik albo hasło jest błędne</p>
 
     <label for="password">Password:</label>
     <input class="form-control" id="password" name="password" required type="password">

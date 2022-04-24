@@ -8,6 +8,6 @@ public class UserLoginService {
     public static String loginUser(UserLoginDTO dto) {
         HashMap<String,String> errorResult = new HashMap<>();
 
-
+        return "";
     }
 }

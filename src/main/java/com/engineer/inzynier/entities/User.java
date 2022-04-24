@@ -71,7 +71,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        if (password != null) {
+        if (password.length() >= 32) {
             this.password = password;
         } else {
             this.password = new BCryptPasswordEncoder().encode(password);
