@@ -1,11 +1,12 @@
 package com.engineer.inzynier.dao;
 
 import com.engineer.inzynier.entities.StepsData;
-import com.engineer.inzynier.entities.User;
+import com.engineer.inzynier.helpers.DateHelper;
 import com.engineer.inzynier.repositories.StepsDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class StepsDataDAO {
         return stepsDataRepository.findAllByEntryTimeAfterAndEntryTimeBeforeAndUserUID(entryTimeAfter, entryTimeBefore, userUID);
     }
 
-    public StepsData getStepsForDate(Date entryTimeBefore, String userUID) {
-        return stepsDataRepository.findFirstByEntryTimeBeforeAndAndUserUID(entryTimeBefore, userUID);
+    public StepsData getStepsForDate(Date entryTime, String userUID) {
+        return stepsDataRepository.findFirstForDayAndUserUID(userUID, DateHelper.getStartOfDay(entryTime),DateHelper.getEndOfDay(entryTime));
     }
     public void saveSteps(StepsData stepsData){
         stepsDataRepository.save(stepsData);

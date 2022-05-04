@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.OrRequestMatcher;
 
@@ -59,17 +58,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/header").permitAll()
                 .antMatchers("/logout").permitAll()
                 .antMatchers("/api/**").permitAll()
-                .antMatchers("/error").permitAll()
+                .antMatchers("/test").permitAll()
+                .antMatchers("/static/**").permitAll()
+                .antMatchers("/heartRateChart").authenticated()
+                .antMatchers("/stepsChart").authenticated()
 //                .antMatchers("/api/authenticate").permitAll()
 //                .antMatchers("/api/registerUser").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login.html").permitAll()
+                .loginPage("/login").permitAll()
                 .loginProcessingUrl("/login").permitAll()
                 .defaultSuccessUrl("/index", true)
                 .failureUrl("/login?error=true")
-//                     .failureHandler(authenticationFailureHandler())
                 .and()
                 .logout()
                 .logoutSuccessUrl("/index")

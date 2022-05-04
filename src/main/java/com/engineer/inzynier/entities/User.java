@@ -22,6 +22,8 @@ public class User {
     private String uid;
     private String password;
 
+    //private Image
+
     public Long getId() {
         return id;
     }
