@@ -10,14 +10,19 @@
     <div th:replace="fragments/header :: header-css"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-<body>
+<body th:style="'text-align:center;'">
 <div th:replace="fragments/header :: header"></div>
-<h1>steps</h1>
 
-
-<div style="width: 1000px;text-align: center;">
-    <h2>Spring Boot Google Charts Example</h2>
+<div style="width: 1000px;text-align: center;margin:auto">
+    <h2>Kroki na przestrzeni tygodnia</h2>
     <div id="chart_div"></div>
+</div>
+
+<div>
+    <h1>Ostatni wpis kroków:</h1>
+    <h1 th:text="${steps.getSteps()}" />
+    <h1>z dnia:</h1>
+    <h1 th:text="${steps.getEntryTime()}"/>
 </div>
 
 <script th:inline="javascript">
@@ -34,19 +39,11 @@
         let data = new google.visualization.DataTable();
         data.addColumn('string', 'Dzień');
         data.addColumn('number', 'Kroki');
-        /*Object.keys(chartData).forEach(function(key) {
-            data.addRow([ key, chartData[key] ]);
-        });*/
         chartData.forEach(function (value){data.addRow([value[0],value[1]])})
-        /*for (const element of chartData){
-            console.log(element)
-            data.addRows(['jakisDzien',element]);
-        }*/
 
-        console.log("dupa")
         // Set chart options
         let options = {
-            title: 'Blog stats',
+            title: 'Wykres kroków',
             hAxis: {
                 title: 'Dzień',
             },

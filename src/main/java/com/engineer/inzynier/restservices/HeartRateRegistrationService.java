@@ -8,7 +8,9 @@ import com.engineer.inzynier.restoutput.DataRegisteredOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 @Service
 public class HeartRateRegistrationService {
@@ -19,7 +21,28 @@ public class HeartRateRegistrationService {
         HeartRateData heartRateData = new HeartRateData();
         heartRateData.setHeartRate(Long.parseLong(heartRateDTO.getHeartRate()));
         heartRateData.setUserUID(heartRateDTO.getUserUID());
-        heartRateData.setEntryTime(Date.from(Instant.now()));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date entryTime = null;
+        try {
+            entryTime =  dateFormat.parse(heartRateDTO.getEntryTime());
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        heartRateData.setEntryTime(entryTime);
+        try {
+            heartRateDAO.saveHeartRate(heartRateData);
+        } catch (Exception ex) {
+            throw new DataRegisterException(ex.getMessage());
+        }
+        return new DataRegisteredOutput("HeartRate registered");
+    }
+    public DataRegisteredOutput registerBatchHeartRate(HeartRateDTO heartRateDTO){
+        HeartRateData heartRateData = new HeartRateData();
+        heartRateData.setHeartRate(Long.parseLong(heartRateDTO.getHeartRate()));
+        heartRateData.setUserUID(heartRateDTO.getUserUID());
+        Long timestamp = Long.parseLong(heartRateDTO.getEntryTime());
+        Instant instant = Instant.ofEpochSecond(timestamp);
+        heartRateData.setEntryTime(Date.from(instant));
         try {
             heartRateDAO.saveHeartRate(heartRateData);
         } catch (Exception ex) {

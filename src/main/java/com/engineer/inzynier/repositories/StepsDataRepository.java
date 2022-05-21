@@ -11,7 +11,9 @@ import java.util.List;
 public interface StepsDataRepository extends JpaRepository<StepsData, Long> {
     List<StepsData> findAllByEntryTimeAfterAndEntryTimeBeforeAndUserUID(Date entryTime, Date entryTime2, String userUID);
 
-    StepsData findFirstByUserUID(String userUID);
+    List<StepsData> findAllByEntryTimeBetweenAndUserUID(Date entryTime, Date entryTime2, String userUID);
+
+    StepsData findFirstByUserUIDOrderByEntryTimeDesc(String userUID);
 
     StepsData findFirstByEntryTimeBeforeAndUserUID(Date entryTimeBefore, String userUID);
     @Query(value = "select * from steps_data s WHERE s.useruid = :userUID  AND s.entry_time >= :startOfDay AND s.entry_time <= :endOfDay ORDER BY s.entry_time desc limit 1", nativeQuery = true)

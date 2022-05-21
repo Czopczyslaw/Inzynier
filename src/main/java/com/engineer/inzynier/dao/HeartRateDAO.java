@@ -16,11 +16,11 @@ public class HeartRateDAO {
 
 
     public HeartRateData getLatestHeartRateForUser(String userUID) {
-        return heartRateRepository.findFirstByUserUID(userUID);
+        return heartRateRepository.findFirstByUserUIDOrderByEntryTimeDesc(userUID);
     }
 
     public List<HeartRateData> getAllForPeriod(Date entryTimeAfter, Date entryTimeBefore, String userUID) {
-        return heartRateRepository.findAllByEntryTimeAfterAndEntryTimeBeforeAndUserUID(entryTimeAfter, entryTimeBefore, userUID);
+        return heartRateRepository.findAllByEntryTimeBetweenAndUserUID(entryTimeAfter, entryTimeBefore, userUID);
     }
 
     public HeartRateData getHeartRateForDate(Date entryTimeBefore, String userUID) {

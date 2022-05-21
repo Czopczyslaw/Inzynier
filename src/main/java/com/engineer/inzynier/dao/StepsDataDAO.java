@@ -16,11 +16,11 @@ public class StepsDataDAO {
     StepsDataRepository stepsDataRepository;
 
     public StepsData getLatestStepsDataForUser(String userUID) {
-        return stepsDataRepository.findFirstByUserUID(userUID);
+        return stepsDataRepository.findFirstByUserUIDOrderByEntryTimeDesc(userUID);
     }
 
     public List<StepsData> getAllForPeriod(Date entryTimeAfter, Date entryTimeBefore, String userUID) {
-        return stepsDataRepository.findAllByEntryTimeAfterAndEntryTimeBeforeAndUserUID(entryTimeAfter, entryTimeBefore, userUID);
+        return stepsDataRepository.findAllByEntryTimeBetweenAndUserUID(entryTimeAfter, entryTimeBefore, userUID);
     }
 
     public StepsData getStepsForDate(Date entryTime, String userUID) {

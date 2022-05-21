@@ -7,9 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 public interface HeartRateRepository extends JpaRepository<HeartRateData, Long> {
-    List<HeartRateData> findAllByEntryTimeAfterAndEntryTimeBeforeAndUserUID(Date entryTime, Date entryTime2, String userUID);
+    List<HeartRateData> findAllByEntryTimeBetweenAndUserUID(Date entryTime, Date entryTime2, String userUID);
 
-    HeartRateData findFirstByUserUID(String userUID);
+    HeartRateData findFirstByUserUIDOrderByEntryTimeDesc(String userUID);
 
     HeartRateData findFirstByEntryTimeBeforeAndAndUserUID(Date entryTimeBefore, String userUID);
 

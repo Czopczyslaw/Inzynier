@@ -13,7 +13,10 @@
         <li th:if="${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/register}">Register</a></li>
         <li th:if="${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/login}">Login</a></li>
         <li th:if="!${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/heartRateChart}">Heart Rate Chart</a></li>
+        <li th:if="!${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/rangedHeartRateChart}">Custom Range Heart Rate Chart</a></li>
         <li th:if="!${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/stepsChart}">Steps Chart</a></li>
+        <li th:if="!${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/rangedStepsChart}">Custom Range Steps Chart</a></li>
+
         <li style="float: right" th:if="!${#authentication.getName().equals('anonymousUser')}"><a th:href="@{/logout}">Logout</a>
         </li>
     </ul>

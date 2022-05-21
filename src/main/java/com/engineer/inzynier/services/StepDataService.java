@@ -19,7 +19,7 @@ public class StepDataService {
     private StepsDataDAO stepsDataDAO;
 
     public List<List<Object>> getJSChartData(Date date, String userUID) {
-        //Map<Object, Object> map = new HashMap<>();
+
         List<List<Object>> list = new ArrayList<>();
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         localDate = localDate.minusDays(7);
@@ -31,10 +31,13 @@ public class StepDataService {
             StepsData stepsData = stepsDataDAO.getStepsForDate(searchDate, userUID);
 
             if (stepsData != null) {
-                //map.put(stepsData.getEntryTime(), stepsData.getSteps());
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                 values.add(dateFormat.format(stepsData.getEntryTime()));
                 values.add(stepsData.getSteps());
+            }else{
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                values.add(dateFormat.format(searchDate));
+                values.add(0);
             }
 
             localDate = localDate.plusDays(1);
@@ -44,5 +47,9 @@ public class StepDataService {
 
         return list;
 
+    }
+
+    public StepsData getLatestStepsData(String userUID) {
+        return stepsDataDAO.getLatestStepsDataForUser(userUID);
     }
 }

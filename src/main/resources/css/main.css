@@ -27,8 +27,15 @@ li a:hover:not(.active) {
 
 .home {
     background-color: #04AA6D;
+    display: flex;
+    height: 100%;
+    margin:auto;
 }
 
 a {
     font-weight: 700;
+}
+footer{
+    align-items: center;
+    justify-self: flex-end;
 }

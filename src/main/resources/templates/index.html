@@ -9,9 +9,20 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
-<h1>Tutaj trzeba coś wsadzić, by nie wyglądało tak obskurnie</h1>
 
-<!--<p>Click <a th:href="@{/hello}">here</a> to login</p>-->
-<!--<p>Click <a th:href="@{/register}">here</a> to register</p>-->
+<div style="text-align:center;" th:id="userInfo" th:if="!${#authentication.getName().equals('anonymousUser')}">
+    <!--img th:src="@{${'/images/'+image.fileName}}" alt="Image">-->
+    <h1>
+        <div th:text=" 'Użytkownik: ' + ${userInfo.get('username')}"/>
+        <div th:text="'Płeć: '+${userInfo.get('gender')}"/>
+        <div th:text="'Waga: '+${userInfo.get('weight')}"/>
+        <div th:text="'Wysokość: '+ ${userInfo.get('height')}"/>
+        <div th:text="'Data urodzin: '+ ${userInfo.get('birthday')}"/>
+    </h1>
+    tutaj bedzie zdjecie
+
+</div>
+
+<footer th:insert="fragments/footer :: footer"></footer>
 </body>
 </html>

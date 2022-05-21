@@ -48,5 +48,9 @@ public class HeartRateData {
         this.entryTime = entryTime;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(heartRate);
 
+    }
 }

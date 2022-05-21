@@ -1,6 +1,8 @@
 package com.engineer.inzynier.helpers;
 
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 import java.util.Calendar;
@@ -30,6 +32,16 @@ public class DateHelper {
         TemporalAccessor temporalAccessor = DateTimeFormatter.ISO_INSTANT.parse(stringDate);
         Instant instant = Instant.from(temporalAccessor);
         return  Date.from(instant);
+    }
+    public static LocalDate parseDateToLocalDate(Date date){
+        return date.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+    }
+    public static Date parseLocalDateToDate(LocalDate date){
+        return Date.from(date.atStartOfDay()
+                .atZone(ZoneId.systemDefault())
+                .toInstant());
     }
 
 }

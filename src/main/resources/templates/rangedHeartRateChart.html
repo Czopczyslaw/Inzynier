@@ -11,23 +11,26 @@
 </head>
 <body th:style="'text-align:center;'">
 <div th:replace="fragments/header :: header"></div>
+<form method="post" th:action="@{/rangedHeartRateChart}">
+
+    <label for="fromDate">Data od:</label>
+    <input id="fromDate" type="date" th:field="${form.fromDate}">
+
+    <label for="toDate">Data do:</label>
+    <input id="toDate" type="date" th:field="${form.toDate}">
+
+    <button class="btn b" type="submit">Change</button>
+</form>
 <div th:style="'margin:auto'">
     <h2>Dzienna średnia pulsu na przestrzeni tygodnia</h2>
     <div id="chart_div"></div>
 </div>
-<div>
-    <h1>Ostatnia wartość pulsu:</h1>
-    <h1 th:text="${heartRate.getHeartRate()}"/>
-    <h1>z dnia:</h1>
-    <h1 th:text="${heartRate.getEntryTime()}"/>
-</div>
-
 
 <script th:inline="javascript">
     let chartData = [[${chartData}]];
     console.log(chartData)
     $(document).ready(function () {
-        google.charts.load('current', {packages: ['corechart','bar']});
+        google.charts.load('current', {packages: ['corechart', 'bar']});
         google.charts.setOnLoadCallback(drawColumnChart);
 
     });
@@ -37,18 +40,18 @@
         let data = new google.visualization.DataTable();
         data.addColumn('string', 'Dzień');
         data.addColumn('number', 'Średnia pulsu');
-        if(chartData != null) {
+        if (chartData != null) {
             chartData.forEach(function (value) {
                 data.addRow([value[0], value[1]])
             })
-        }else{
-            data.addRow(["0",0])
-            data.addRow(["0",0])
-            data.addRow(["0",0])
-            data.addRow(["0",0])
-            data.addRow(["0",0])
-            data.addRow(["0",0])
-            data.addRow(["0",0])
+        } else {
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
         }
         // Set chart options
         let options = {
