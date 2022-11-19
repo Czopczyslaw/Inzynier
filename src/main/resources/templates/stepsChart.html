@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="pl_PL">
+<head>
+    <title>Inzynier</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div th:replace="fragments/header :: header-css"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body th:style="'text-align:center;'">
+<div th:replace="fragments/header :: header"></div>
+
+<div style="width: 1000px;text-align: center;margin:auto">
+    <h2>Kroki na przestrzeni tygodnia</h2>
+    <div id="chart_div"></div>
+</div>
+
+<div>
+    <h1>Ostatni wpis kroków:</h1>
+    <h1 th:text="${steps.getSteps()}" />
+    <h1>z dnia:</h1>
+    <h1 th:text="${steps.getEntryTime()}"/>
+</div>
+
+<script th:inline="javascript">
+    let chartData = [[${chartData}]];
+    console.log(chartData)
+    $(document).ready(function () {
+        google.charts.load('current', {packages: ['corechart','bar']});
+        google.charts.setOnLoadCallback(drawColumnChart);
+
+    });
+
+    function drawColumnChart() {
+        // Create the data table.
+        let data = new google.visualization.DataTable();
+        data.addColumn('string', 'Dzień');
+        data.addColumn('number', 'Kroki');
+        chartData.forEach(function (value){data.addRow([value[0],value[1]])})
+
+        // Set chart options
+        let options = {
+            title: 'Wykres kroków',
+            hAxis: {
+                title: 'Dzień',
+            },
+            vAxis: {
+                title: 'Liczba kroków'
+            }
+        };
+        console.log(options)
+
+        // Instantiate and draw our chart, passing in some options.
+        let chart = new google.visualization.ColumnChart(document
+            .getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+</body>
+</html>

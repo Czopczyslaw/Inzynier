@@ -21,6 +21,55 @@ public class User {
     private Role userRole;
     private String uid;
     private String password;
+    @OneToOne
+    @JoinColumn(name = "avatar_id")
+    private Image avatar;
+    private int gender;
+    private int weight;
+    private int height;
+    private Date birthday;
+
+
+    public Image getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Image avatar) {
+        this.avatar = avatar;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
 
     public Long getId() {
         return id;
@@ -71,7 +120,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        if (password != null) {
+        if (password.length() >= 32) {
             this.password = password;
         } else {
             this.password = new BCryptPasswordEncoder().encode(password);

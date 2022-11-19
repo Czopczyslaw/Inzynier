@@ -30,6 +30,8 @@ public class UserRegistrationService {
         user.setUserRole(Role.USER);
         user.setUid(UUID.randomUUID().toString());
         user.setCreated(Date.from(Instant.now()));
+        user.setBirthday(new Date(0));
+
 
         userDAO.addUser(user);
     }

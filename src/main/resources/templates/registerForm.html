@@ -12,6 +12,7 @@
     <label for="username">Username:</label>
     <input autofocus class="form-control" id="username" th:field="${form.username}" type="text">
     <p class="error" th:text="${usernameValRes}"></p>
+    <p class="error" th:text="${userExistsException}"></p>
 
 
     <label for="email">Email:</label>
@@ -24,7 +25,7 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Create account</button>
 
-    <!--  <div th:replace="fragments/footer :: footer"></div>-->
+    <div th:replace="fragments/footer :: footer"></div>
 </form>
 
 </body>

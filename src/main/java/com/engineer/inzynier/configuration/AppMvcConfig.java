@@ -20,10 +20,12 @@ public class AppMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/register").setViewName("register");
         registry.addViewController("/registerForm").setViewName("registerForm");
         registry.addViewController("/header").setViewName("header");
+        registry.addViewController("/error").setViewName("error");
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/css/**", "/js/**").addResourceLocations("classpath:/css/", "classpath:/js/");
+        registry.addResourceHandler("/css/**", "/js/**","/images/**").addResourceLocations("classpath:/css/", "classpath:/js/", "file:images/");
+
     }
 }

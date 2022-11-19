@@ -58,19 +58,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/header").permitAll()
                 .antMatchers("/logout").permitAll()
                 .antMatchers("/api/**").permitAll()
+                .antMatchers("/test").permitAll()
+                .antMatchers("/static/**").permitAll()
+                .antMatchers("/heartRateChart").authenticated()
+                .antMatchers("/stepsChart").authenticated()
 //                .antMatchers("/api/authenticate").permitAll()
 //                .antMatchers("/api/registerUser").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login.html").permitAll()
+                .loginPage("/login").permitAll()
                 .loginProcessingUrl("/login").permitAll()
                 .defaultSuccessUrl("/index", true)
+                .failureUrl("/login?error=true")
                 .and()
                 .logout()
+                .logoutUrl("/index")
                 .logoutSuccessUrl("/index")
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .permitAll();
     }
 }
+

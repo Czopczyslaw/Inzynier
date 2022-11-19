@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="pl_PL">
+<head>
+    <title>Heart Rate Chart</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div th:replace="fragments/header :: header-css"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body th:style="'text-align:center;'">
+<div th:replace="fragments/header :: header"></div>
+<form method="post" th:action="@{/rangedHeartRateChart}">
+
+    <label for="fromDate">Data od:</label>
+    <input id="fromDate" type="date" th:field="${form.fromDate}">
+
+    <label for="toDate">Data do:</label>
+    <input id="toDate" type="date" th:field="${form.toDate}">
+
+    <button class="btn b" type="submit">Change</button>
+</form>
+<div th:style="'margin:auto'">
+    <h2>Dzienna średnia pulsu na przestrzeni tygodnia</h2>
+    <div id="chart_div"></div>
+</div>
+
+<script th:inline="javascript">
+    let chartData = [[${chartData}]];
+    console.log(chartData)
+    $(document).ready(function () {
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawColumnChart);
+
+    });
+
+    function drawColumnChart() {
+        // Create the data table.
+        let data = new google.visualization.DataTable();
+        data.addColumn('string', 'Dzień');
+        data.addColumn('number', 'Średnia pulsu');
+        if (chartData != null) {
+            chartData.forEach(function (value) {
+                data.addRow([value[0], value[1]])
+            })
+        } else {
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+            data.addRow(["0", 0])
+        }
+        // Set chart options
+        let options = {
+            title: 'Wykres pulsu',
+            hAxis: {
+                title: 'Dzień',
+            },
+            vAxis: {
+                title: 'Puls'
+            }
+        };
+        console.log(options)
+
+        // Instantiate and draw our chart, passing in some options.
+        let chart = new google.visualization.ColumnChart(document
+            .getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+</body>
+</html>
